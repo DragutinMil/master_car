@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="dramil, development, izrada sajtova, programiranje">
+    <meta name="description" content="Dramil development , Beograd, povoljna izrada sajtova.  ">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.21.2/bootstrap-vue.min.css" integrity="sha512-YnP4Ql71idaMB+/ZG38+1adSSQotdqvixQ+dQg8x/IFA4heIj6i0BC31W5T5QUdK1Uuwa01YdqdcT42q+RldAg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="fontAwesome/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">   
+    <title>DraMil Development</title> 
+
+</head> 
+<body>
+  <!--HEADER-->
+    <header id="header">
+      
+        <div>
+            <img src="pictures/logo3.png" id="logoPicture" alt="">
+        </div>  
+        <div>
+        <ul class="nav flex-row fullheight displaynone"> 
+            <li class="nav-item">
+              <a class="nav-link" href="#">POČETNA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section1">VOZILA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#section2">USLOVI I OSIGURANJE</a>
+              </li>
+             
+              <li class="nav-item">
+                <a class="nav-link" href="#section3">O NAMA</a>
+              </li>
+
+              
+          </ul>
+          </div>
+          <div id="flex-header" >
+            <p class="social">Social Networks</p>
+            <ul class="nav flex-row fullheight">
+            <li class="nav-item ">
+                <a class="nav-link" href="https://www.facebook.com/search/posts/?q=dragutin%20miladinovic&epa=SERP_TAB"> <i class="fab fa-facebook"></i> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fab fa-instagram"></i> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> <i class="far fa-envelope"></i> </a>
+              </li>
+            </ul>
+          </div>
+
+      </header>
+     <!--END HEADER-->  
+
+      <div  class="intro-section">
+              <div class="main-divs ">
+              <div class="padd-main1">
+                <h3>Lorem ipsum dolor sit.</h3>
+                <p id="mar-main1">Kada Vam zatreba rent a car vozilo u Beogradu, napravite rezervaciju u Master prostorijama ili naručite preko našeg sajta. Budite uvereni da ste doneli pravu odluku kada je vrednost usluge za uloženi novac u pitanju. Kada rezervišete vozilo u agenciji Master, očekujte neke od najnovijih modela svetskih brendova proverenih performansi po najpovoljnijim cenama!</p>
+                <div class="div-flex">                                                     
+                                <a href=""><h5 style="color:white"  >More</h5></a>                         
+                                <a   style="margin-left:20px;"    href="#"><i style="color:red;"  class="fas fa-arrow-right"></i></a>                              
+                </div>
+            </div>
+          </div>
+        </div>
+  
+        <main id="app">   
+          
+          <!--DATE PICKER-->
+         <div class="main2-1" id="section1">         
+           <h5>Naša vozila</h5>                      
+           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam veritatis rem natus assumenda quasi accusantium unde quibusdam consequuntur quisquam possimus nihil repudiandae, adipisci similique ipsum magni at dolorum et quidem aperiam nam facilis esse, ea obcaecati! Fugit nemo necessitatibus voluptas dolore atque animi doloremque corporis repudiandae modi molestias assumenda eaque iure, dignissimos consequatur vel minima exercitationem? Commodi exercitationem placeat suscipit vel id, deserunt, dolor a quas officiis, omnis explicabo assumenda?</p>
+           <p id="section5" style="color:rgb(159, 185, 43);padding-top:70px">Proverite raspolozivost vozila:</p>
+         
+           <div id="choosedate-flex">
+
+            
+
+            <div class="datepickeri">
+              
+              <label for="example-input">Izaberi datum preuzimanja</label>
+              <b-input-group class="mb-3"  >
+                <b-form-input class="trt1"
+                  id="example-input2"
+                  v-model="fromvalue"
+                  type="text"
+                  placeholder="YYYY-MM-DD"
+                  autocomplete="off"
+                  calendar-width=                 
+
+                ></b-form-input>
+                <b-input-group-append>
+                  <b-form-datepicker   class="trt"                
+                    v-model="fromvalue"              
+                    button-only
+                    right
+                    locale="en-US"
+                    aria-controls="example-input2"
+                    @context="onContext"
+                    hide-header="true"
+                    :date-disabled-fn="dateDisabled"  
+                    dropleft="false"
+                    dark="false"   
+                               
+                  ></b-form-datepicker>
+                </b-input-group-append>
+              </b-input-group>   
+            </div>
+
+            <div class="datepickeri" >
+              <label for="example-input" id="section6">Izaberi datum vraćanja</label>
+              <b-input-group class="mb-3">
+                <b-form-input class="trt1"
+                  id="example-input"
+                  v-model="tovalue"
+                  type="text"
+                  placeholder="YYYY-MM-DD"
+                  autocomplete="off" 
+                                  
+                ></b-form-input>
+                <b-input-group-append >
+                  <b-form-datepicker  class="trt"
+                    v-model="tovalue"
+                    button-only
+                    right
+                    locale="en-US"
+                    aria-controls="example-input"
+                    @context="onContext"
+                    hide-header="true"
+                    :date-disabled-fn="dateDisabled" 
+                    dropleft="false"
+                    dark="false"    
+                    
+                  ></b-form-datepicker>
+                </b-input-group-append>
+              </b-input-group>          
+            </div>
+             
+              <div   style="margin-top: 32px;" v-show="checkButton">
+                  <b-button size="md" @click="checkvehicle">Proveri</b-button>                 
+                </div>  
+        </div>
+     
+          <div>
+            <p  style="color:white;font-size: smaller;">{{answer}}</p> 
+            <p style="color:red;font-size: smaller; padding-bottom:10px;"> {{answer2}}</p>
+          </div>                      
+      </div>         
+         <!-- END DATE PICKER-->
+
+
+         <!--RESERVATION-->
+      <transition name="fade"> 
+         <div class="reserve-grid" v-show="reservationMenu">
+          <div id="reservation"  >
+           <reservation  :dodaci="dodaci" :veh="veh" :veh0="veh0" :veh1="veh1" :answer3="answer3" :price="price"   :numberdays=numberdays > </reservation>
+           <!--  <div id="textarea-reservation">
+                 <div>
+                        <b-form-group id="input-group-4">
+                          <b-form-checkbox-group @click="klik" v-model="checked1"  id="checkboxes-4"  >
+                            <b-form-checkbox   style="font-size:12px;" >Dodatni vozač </b-form-checkbox>
+                          </b-form-checkbox-group>
+                        </b-form-group>
+                        <b-form-group id="input-group-4">
+                          <b-form-checkbox-group v-model="checked2" id="checkboxes-4"  >
+                            <b-form-checkbox  style="font-size:12px;margin:auto" >GPS</b-form-checkbox>
+                          </b-form-checkbox-group>
+                        </b-form-group>
+                        <b-form-group id="input-group-4">
+                          <b-form-checkbox-group v-model="checked3" id="checkboxes-4"  >
+                            <b-form-checkbox  style="font-size:12px;margin:auto" >Prelazak granice</b-form-checkbox>
+                          </b-form-checkbox-group>
+                        </b-form-group>
+                      
+                  </div>
+                  <div>
+                          <b-form-textarea
+                            id="textarea-no-resize"
+                            placeholder="Text here"
+                            rows="4"
+                            no-resize
+                        ></b-form-textarea>
+                  </div>
+            </div> --> 
+          </div>
+          <div id="reservation"  >
+              <p id="section4" > <b>Popunite podatke kako biste rezervisali vozilo: </b> </p>
+              <div >
+                <b-form  @submit="onSubmit" @reset="onReset" v-if="show">
+                  <b-form-group
+                    id="input-grFoup-1"
+                    label="Email adresa:"
+                    label-for="input-1"
+                    description="We'll never share your email with anyone else."
+                    
+                  >
+                    <b-form-input size="sm"
+                      id="input-1"
+                      v-model="form.email"
+                      type="email"
+                      required
+                      placeholder="Unesi email"
+                      
+                    ></b-form-input>
+                  </b-form-group>
+            
+                  <b-form-group id="input-group-2" label="Ime i prezime" label-for="input-2">
+                    <b-form-input size="sm"
+                      id="input-2"
+                      v-model="form.name"
+                      required
+                      placeholder="Unesi ime i prezime"
+                      
+                    ></b-form-input>
+                  </b-form-group>
+                  <b-form-group id="input-group-2" label="Broj telefona" label-for="input-2">
+                    <b-form-input size="sm"
+                      id="input-3"
+                      v-model="form.phone"
+                      required
+                      placeholder="Unesi broj telefona"
+                      
+                    ></b-form-input>
+                  </b-form-group>
+                 <b-form-group id="input-group-4">
+                    <b-form-checkbox-group v-model="form.checked" id="checkboxes-4"  >
+                      <b-form-checkbox  value="checked" style="font-size:12px;margin:auto" >Prihvatam uslove</b-form-checkbox>
+                    </b-form-checkbox-group>
+                  </b-form-group>
+            
+                  <b-button type="submit" size="sm" variant="light">Submit</b-button>
+                  <b-button type="reset" size="sm"   variant="light">Reset</b-button>
+                </b-form>                               
+              </div>
+          </div>
+          
+
+
+        </div>  
+      </transition>
+
+        <!--END RESERVATION-->
+
+
+         <!-- CHOOSE CAR -->
+        
+      <div class="main3">
+          <div >
+            <p style="padding-left:50px;text-decoration: underline;"><b>MASTER VOZILA</b></p>
+          </div>
+          <div id="gallery">
+            <cars v-for="car in cars" :car="car"   @reservation-setup="carReservation" ></cars>
+               
+          </div>     
+      </div>
+    <!--END CHOOSE CAR -->
+
+    <!--REST PART1 -->
+      <div class="sec34" id="section2"> 
+        <h3 style="margin-bottom:1.3rem">USLOVI I OSIGURANJE I DODATNA OPREMA</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, et. Quas facere facilis aut obcaecati, asperiores temporibus eligendi quisquam culpa corrupti ipsa quidem eos debitis autem suscipit maiores nihil quo dolore earum dolores adipisci officiis sint? Neque corrupti temporibus deserunt quae, a, magnam pariatur voluptate error odit repudiandae voluptatibus suscipit aliquid. </p>
+        <div class="restoffer-icon-grid">
+              <div class="restoffer-icon">
+                <i class="fas fa-map fa-2x icolor"></i>
+                <p class="restoffer-text"> GPS Navigacija</p>
+              </div>
+              <div class="restoffer-icon">
+                <i class="fas fa-car-crash fa-2x icolor"></i>
+                <p class="restoffer-text"> Kasko osiguranje, osiguranje putnika i dr.</p>
+              </div>
+              <div class="restoffer-icon ">
+                <i class="fas fa-globe-americas fa-2x icolor"></i>
+                <p class="restoffer-text"> Prelazak granice</p>
+              </div>
+            </div>
+            <div class="restoffer-grid2">
+              <div class="restoffer-icon">
+                <i class="fas fa-male fa-2x icolor"></i>
+                <p class="restoffer-text"> Vaš lični vozač</p>
+              </div>
+        
+              <div class="restoffer-icon">
+                <div class="icon-block">
+                    <i class="fas fa-skiing fa-2x icolor"></i>
+                    <i class="fas fa-bicycle fa-2x icolor"></i>
+                    <i class="fas fa-link fa-2x icolor"></i>
+                </div> 
+                <p class="restoffer-text"> - Dodatna oprema - lanci za sneg, nosači za bicikle, skijašku opremu i dr.</p>
+              </div>
+            </div>
+        <p class="mobileNone"> Consectetur eaque et magnam sequi in obcaecati voluptate autem suscipit similique neque officiis sed est quam nisi delectus, laboriosam perspiciatis rem aut dolor doloremque veniam porro fuga sit ea? Maiores nam accusamus ducimus repellat tempore modi, amet accusantium cum in perferendis quae ab? Beatae error dicta eius libero tempora architecto odio asperiores fugit, vero dolor ipsam consequuntur ad corporis? Dolorem alias voluptatibus dicta facilis sapiente maiores dolores, veniam consequuntur, ratione atque tempora ipsum, soluta voluptate distinctio assumenda eveniet in quam sit provident perspiciatis! Et consectetur minus soluta. Vero magni ab accusamus rem cupiditate corrupti saepe inventore ipsum excepturi rerum. Sequi, dolore? Architecto perferendis, placeat consectetur dolore neque error. Magnam, laboriosam mollitia provident exercitationem minus laborum, sed et recusandae dolore accusantium velit saepe consequatur odit esse numquam sunt corrupti. Maxime at eum, pariatur ipsam vel nostrum sit aperiam esse neque. Aperiam delectus molestiae a ex, dolore amet fugiat adipisci inventore et qui omnis, quos doloremque saepe nobis reiciendis cumque sunt minima explicabo similique eius autem. Aliquid velit, facere fugiat cumque soluta cupiditate molestiae vero, iste distinctio voluptates tenetur voluptatibus repudiandae eaque suscipit nobis aspernatur porro, aliquam obcaecati necessitatibus? Quidem quos excepturi aut assumenda provident molestias, dolor, accusamus quae est odit maiores quaerat illum nemo suscipit aperiam ipsum blanditiis quisquam tempora sapiente, facere impedit ea necessitatibus porro vitae.</p>
+                    
+        </div>
+     <div  id="section3">
+        <div id="about-grid">         
+          <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.0714614662256!2d20.29069351575455!3d44.82010878420881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a71980de1a511%3A0xbfb4ad66f13c776!2sMaster%20Rent%20a%20Car!5e0!3m2!1ssr!2srs!4v1605391824016!5m2!1ssr!2srs" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+          <div id="about-margin">
+            <h3 >O NAMA</h3><br><br><br>
+            <p>Master Rent-a-car iznajmljivanje vozila (rent a car) je kompanija sa višegodišnjim iskustvom u svom poslu. Osnovana je 2005 godine, i stekli smo veliki ugled po profesionalnosti, tačnosti i odnosu prema korisnicima usluge. </p>
+            <p>Zaposleni u kompaniji obučavani su u najpoznatijim svetskim rent a car brendovima poput Avis-a i BUDGET-a i zato s pravom od nas možete da očekujte uslugu na visokom nivou!</p>
+          </div>
+         
+      </div>
+    </div>
+          <div id="contact-grid">
+              <div>
+                  <i class="fas fa-address-card fa-3x icon-color"></i>
+                  <p class="contact">Aerodrom Nikola Tesla 59</p>
+                  <p>Beograd-Surčin</p>
+              </div>
+              <div>
+                  <i class="fas fa-mobile-alt fa-3x icon-color" ></i>
+                  <p class="contact">Mob: 063/584-55-66</p>
+                  <p>Fix: 011/584-55-66</p>
+              </div>
+              <div>
+                  <i class="fas fa-at fa-3x icon-color"></i>
+                  <p class="contact">mastercar.serbia@gmail.com</p>
+              </div>
+          </div>
+      <!--END REST PART1 -->
+      <hr>  
+      <div>        
+        <p id="footer">  <i class="far fa-copyright"></i> DraMil Development</p>
+      </div>
+       
+      </main> 
+     
+      
+      
+     
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" integrity="sha512-VZ6m0F78+yo3sbu48gElK4irv2dzPoep8oo9LEjxviigcnnnNvnTOJRSrIhuFk68FMLOpiNz+T77nNY89rnWDg==" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
+<script  src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.21.2/bootstrap-vue.min.js" integrity="sha512-Z0dNfC81uEXC2iTTXtE0rM18I3ATkwn1m8Lxe0onw/uPEEkCmVZd+H8GTeYGkAZv50yvoSR5N3hoy/Do2hNSkw==" crossorigin="anonymous"></script>
+
+<script src="/js/index.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+<script src="js/parallax.js-1.3.1/parallax.js"></script> 
+ 
+
+
+ 
+<script>
+   $(function() {  
+
+// Parallax
+    $('.intro-section').parallax({
+      imageSrc: 'pictures/bmwo.jpg',
+      speed: 0.2
+    })
+  });
+   
+</script>
+
+ 
+
+</html>
